@@ -74,6 +74,40 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		BFA162181CEE2F2300D5C082 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Model;
+			sourceTree = "<group>";
+		};
+		BFA162191CEE2F3400D5C082 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				BFF4955F1CEE2BA70096E8DB /* ViewController.swift */,
+			);
+			name = Controller;
+			sourceTree = "<group>";
+		};
+		BFA1621A1CEE2F4200D5C082 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				BFF495611CEE2BA70096E8DB /* Main.storyboard */,
+				BFF495661CEE2BA70096E8DB /* LaunchScreen.storyboard */,
+			);
+			name = View;
+			sourceTree = "<group>";
+		};
+		BFA1621B1CEE2F5E00D5C082 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				BFF495641CEE2BA70096E8DB /* Assets.xcassets */,
+				BFF495691CEE2BA70096E8DB /* Info.plist */,
+				BFF4955D1CEE2BA70096E8DB /* AppDelegate.swift */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
 		BFF495511CEE2BA70096E8DB = {
 			isa = PBXGroup;
 			children = (
@@ -97,12 +131,10 @@
 		BFF4955C1CEE2BA70096E8DB /* MusicVideo */ = {
 			isa = PBXGroup;
 			children = (
-				BFF4955D1CEE2BA70096E8DB /* AppDelegate.swift */,
-				BFF4955F1CEE2BA70096E8DB /* ViewController.swift */,
-				BFF495611CEE2BA70096E8DB /* Main.storyboard */,
-				BFF495641CEE2BA70096E8DB /* Assets.xcassets */,
-				BFF495661CEE2BA70096E8DB /* LaunchScreen.storyboard */,
-				BFF495691CEE2BA70096E8DB /* Info.plist */,
+				BFA1621B1CEE2F5E00D5C082 /* Supporting Files */,
+				BFA162181CEE2F2300D5C082 /* Model */,
+				BFA162191CEE2F3400D5C082 /* Controller */,
+				BFA1621A1CEE2F4200D5C082 /* View */,
 			);
 			path = MusicVideo;
 			sourceTree = "<group>";
@@ -487,6 +519,7 @@
 				BFF495841CEE2BA70096E8DB /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		BFF495851CEE2BA70096E8DB /* Build configuration list for PBXNativeTarget "MusicVideoTests" */ = {
 			isa = XCConfigurationList;
@@ -495,6 +528,7 @@
 				BFF495871CEE2BA70096E8DB /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		BFF495881CEE2BA70096E8DB /* Build configuration list for PBXNativeTarget "MusicVideoUITests" */ = {
 			isa = XCConfigurationList;
@@ -503,6 +537,7 @@
 				BFF4958A1CEE2BA70096E8DB /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
