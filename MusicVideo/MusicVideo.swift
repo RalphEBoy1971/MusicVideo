@@ -23,6 +23,9 @@ class Videos {
     private var _vLinkToiTunes:String
     private var _vReleaseDte:String
     
+    // This variable gets created from the UI
+    var vImageData:NSData?
+    
     // Make a getter
     
     var vName: String {
@@ -100,7 +103,7 @@ class Videos {
         // Video Rights
         if let rights = data["rights"] as? JSONDictionary,
             vRights = rights["label"] as? String {
-            self._vRights = vRights
+                self._vRights = vRights
         }
         else
         {
@@ -110,7 +113,7 @@ class Videos {
         // Video Price
         if let price = data["im:price"] as? JSONDictionary,
             vPrice = price["label"] as? String {
-            self._vPrice = vPrice
+                self._vPrice = vPrice
         }
         else
         {
@@ -120,7 +123,7 @@ class Videos {
         // Video Artist
         if let artist = data["im:artist"] as? JSONDictionary,
             vArtist = artist["label"] as? String {
-            self._vArtist = vArtist
+                self._vArtist = vArtist
         }
         else
         {
@@ -131,7 +134,7 @@ class Videos {
         if let imid = data["id"] as? JSONDictionary,
             imid2 = imid["attributes"] as? JSONDictionary,
             vImid = imid2["im:id"] as? String {
-            self._vImid = vImid
+                self._vImid = vImid
         }
         else
         {
@@ -142,7 +145,7 @@ class Videos {
         if let genre = data["link"] as? JSONDictionary,
             genre2 = genre["attributes"] as? JSONDictionary,
             vGenre = genre2["label"] as? String {
-            self._vGenre = vGenre
+                self._vGenre = vGenre
         }
         else
         {
@@ -152,7 +155,7 @@ class Videos {
         // Video Link To iTunes
         if let linkToiTunes = data["id"] as? JSONDictionary,
             vLinkToiTunes = linkToiTunes["label"] as? String {
-            self._vLinkToiTunes = vLinkToiTunes
+                self._vLinkToiTunes = vLinkToiTunes
         }
         else
         {
@@ -163,7 +166,7 @@ class Videos {
         if let releaseDte = data["im:releaseDate"] as? JSONDictionary,
             releaseDte2 = releaseDte["attributes"] as? JSONDictionary,
             vReleaseDte = releaseDte2["label"] as? String {
-            self._vReleaseDte = vReleaseDte
+                self._vReleaseDte = vReleaseDte
         }
         else
         {
