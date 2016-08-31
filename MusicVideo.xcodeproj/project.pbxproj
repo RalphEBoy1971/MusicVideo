@@ -11,6 +11,7 @@
 		BFA1621D1CEE339500D5C082 /* APIManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFA1621C1CEE339500D5C082 /* APIManager.swift */; };
 		BFA162201CEE44EC00D5C082 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFA1621F1CEE44EC00D5C082 /* Constants.swift */; };
 		BFA162221CEE464C00D5C082 /* MusicVideo.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFA162211CEE464C00D5C082 /* MusicVideo.swift */; };
+		BFC2D6551D7755CE00E8F62E /* MusicVideoTVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFC2D6541D7755CE00E8F62E /* MusicVideoTVC.swift */; };
 		BFF4955E1CEE2BA70096E8DB /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFF4955D1CEE2BA70096E8DB /* AppDelegate.swift */; };
 		BFF495601CEE2BA70096E8DB /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFF4955F1CEE2BA70096E8DB /* ViewController.swift */; };
 		BFF495631CEE2BA70096E8DB /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BFF495611CEE2BA70096E8DB /* Main.storyboard */; };
@@ -44,6 +45,7 @@
 		BFA1621C1CEE339500D5C082 /* APIManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = APIManager.swift; sourceTree = "<group>"; };
 		BFA1621F1CEE44EC00D5C082 /* Constants.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		BFA162211CEE464C00D5C082 /* MusicVideo.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MusicVideo.swift; sourceTree = "<group>"; };
+		BFC2D6541D7755CE00E8F62E /* MusicVideoTVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MusicVideoTVC.swift; sourceTree = "<group>"; };
 		BFF4955A1CEE2BA70096E8DB /* MusicVideo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MusicVideo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		BFF4955D1CEE2BA70096E8DB /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		BFF4955F1CEE2BA70096E8DB /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -106,6 +108,7 @@
 		BFA162191CEE2F3400D5C082 /* Controller */ = {
 			isa = PBXGroup;
 			children = (
+				BFC2D6541D7755CE00E8F62E /* MusicVideoTVC.swift */,
 				BFF4955F1CEE2BA70096E8DB /* ViewController.swift */,
 			);
 			name = Controller;
@@ -329,6 +332,7 @@
 				BFF4955E1CEE2BA70096E8DB /* AppDelegate.swift in Sources */,
 				BF4A870D1D5E19D400234E32 /* Reachability.m in Sources */,
 				BFA162201CEE44EC00D5C082 /* Constants.swift in Sources */,
+				BFC2D6551D7755CE00E8F62E /* MusicVideoTVC.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
