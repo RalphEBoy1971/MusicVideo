@@ -97,11 +97,11 @@
                         <sections>
                             <tableViewSection id="XTT-4Q-sL7">
                                 <cells>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" rowHeight="84" id="lDe-nh-ltR">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" accessoryType="disclosureIndicator" indentationWidth="10" rowHeight="84" id="lDe-nh-ltR">
                                         <rect key="frame" x="0.0" y="64" width="600" height="84"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="lDe-nh-ltR" id="b88-HA-Bbz">
-                                            <rect key="frame" x="0.0" y="0.0" width="600" height="83.5"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="567" height="83.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="About" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="wP9-75-rxE">
@@ -120,6 +120,9 @@
                                                 <constraint firstItem="wP9-75-rxE" firstAttribute="leading" secondItem="b88-HA-Bbz" secondAttribute="leadingMargin" id="gAY-N2-zFV"/>
                                             </constraints>
                                         </tableViewCellContentView>
+                                        <connections>
+                                            <segue destination="ir1-01-339" kind="push" id="CPn-IG-pkr"/>
+                                        </connections>
                                     </tableViewCell>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" rowHeight="84" id="eDD-AK-tgD">
                                         <rect key="frame" x="0.0" y="148" width="600" height="84"/>
@@ -270,6 +273,38 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="hb8-He-Mo2" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1524" y="895"/>
+        </scene>
+        <!--AboutVC-->
+        <scene sceneID="nEr-Wq-PVP">
+            <objects>
+                <viewController id="ir1-01-339" customClass="AboutVC" customModule="MusicVideo" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="cnp-5a-1Mp"/>
+                        <viewControllerLayoutGuide type="bottom" id="k7y-GS-s8r"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="dzW-vM-wSO">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="This is my about page :)" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="pt8-MV-j54">
+                                <rect key="frame" x="20" y="206" width="560" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="pt8-MV-j54" firstAttribute="leading" secondItem="dzW-vM-wSO" secondAttribute="leadingMargin" id="5rE-h4-aE8"/>
+                            <constraint firstItem="pt8-MV-j54" firstAttribute="top" secondItem="cnp-5a-1Mp" secondAttribute="bottom" constant="142" id="K7U-eG-5ZM"/>
+                            <constraint firstItem="pt8-MV-j54" firstAttribute="trailing" secondItem="dzW-vM-wSO" secondAttribute="trailingMargin" id="tkg-gS-LlM"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" id="CGD-P0-jy8"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="DaY-fl-7kN" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2239" y="994"/>
         </scene>
         <!--Music Video DetailVC-->
         <scene sceneID="lLS-Ya-pC2">
