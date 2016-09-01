@@ -29,9 +29,22 @@ class SettingsTVC: UITableViewController {
         title = "Settings"
 
         touchID.on = NSUserDefaults.standardUserDefaults().boolForKey("SecSetting")
+        
+        if (NSUserDefaults.standardUserDefaults().objectForKey("APICNT") != nil) {
+            let theValue = NSUserDefaults.standardUserDefaults().objectForKey("APICNT") as! Int
+            APICnt.text = "\(theValue)"
+            sliderCnt.value = Float(theValue)
+        }
 
     }
     
+    @IBAction func valueChanged(sender: AnyObject) {
+        
+        let defaults = NSUserDefaults.standardUserDefaults()
+        defaults.setObject(Int(sliderCnt.value), forKey: "APICNT")
+        APICnt.text = ("\(Int(sliderCnt.value))")
+        
+    }
     @IBAction func touchIDSec(sender: UISwitch) {
         
         let defaults = NSUserDefaults.standardUserDefaults()
