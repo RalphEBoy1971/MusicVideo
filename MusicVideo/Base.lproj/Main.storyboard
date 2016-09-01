@@ -22,8 +22,9 @@
                                     <rect key="frame" x="0.0" y="0.0" width="600" height="131.5"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
-                                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="mjb-3f-Cnv">
+                                        <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="mjb-3f-Cnv">
                                             <rect key="frame" x="8" y="8" width="153" height="116"/>
+                                            <color key="backgroundColor" red="0.16039663461538445" green="0.16039663461538445" blue="0.16039663461538445" alpha="1" colorSpace="calibratedRGB"/>
                                             <constraints>
                                                 <constraint firstAttribute="width" constant="153" id="U6Y-jM-QTR"/>
                                             </constraints>
@@ -81,7 +82,7 @@
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" toolbarHidden="NO" id="WKG-Dm-fNQ" sceneMemberID="viewController">
                     <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="5xh-gk-QeF">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" barStyle="blackTranslucent" id="5xh-gk-QeF">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>

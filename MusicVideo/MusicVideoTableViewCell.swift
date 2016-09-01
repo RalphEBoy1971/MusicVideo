@@ -28,12 +28,13 @@ class MusicVideoTableViewCell: UITableViewCell {
         //musicImage.image = UIImage(named: "itunes")
         
         if video!.vImageData != nil {
-            print("Get data from array ...")
+            print("\(video!.vRank) - Get data from array ...")
             musicImage.image = UIImage(data: video!.vImageData!)
         }
         else
         {
             getVideoImage(video!, imageView: musicImage)
+            //print("Get images in background thread ...")
         }
         
         
@@ -50,6 +51,7 @@ class MusicVideoTableViewCell: UITableViewCell {
             if data != nil {
                 video.vImageData = data
                 image = UIImage(data: data!)
+                print("\(video.vRank) - Get data from iTunes ...")
             }
             
             // move back to Main Queue
