@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		BF4A870D1D5E19D400234E32 /* Reachability.m in Sources */ = {isa = PBXBuildFile; fileRef = BF4A870C1D5E19D400234E32 /* Reachability.m */; };
+		BF7007321D789F00007B1DF2 /* MusicVideoDetailVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF7007311D789F00007B1DF2 /* MusicVideoDetailVC.swift */; };
 		BFA1621D1CEE339500D5C082 /* APIManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFA1621C1CEE339500D5C082 /* APIManager.swift */; };
 		BFA162201CEE44EC00D5C082 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFA1621F1CEE44EC00D5C082 /* Constants.swift */; };
 		BFA162221CEE464C00D5C082 /* MusicVideo.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFA162211CEE464C00D5C082 /* MusicVideo.swift */; };
@@ -43,6 +44,7 @@
 		BF4A870A1D5E19D400234E32 /* MusicVideo-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "MusicVideo-Bridging-Header.h"; sourceTree = "<group>"; };
 		BF4A870B1D5E19D400234E32 /* Reachability.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Reachability.h; sourceTree = "<group>"; };
 		BF4A870C1D5E19D400234E32 /* Reachability.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Reachability.m; sourceTree = "<group>"; };
+		BF7007311D789F00007B1DF2 /* MusicVideoDetailVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MusicVideoDetailVC.swift; sourceTree = "<group>"; };
 		BFA1621C1CEE339500D5C082 /* APIManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = APIManager.swift; sourceTree = "<group>"; };
 		BFA1621F1CEE44EC00D5C082 /* Constants.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		BFA162211CEE464C00D5C082 /* MusicVideo.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MusicVideo.swift; sourceTree = "<group>"; };
@@ -110,6 +112,7 @@
 		BFA162191CEE2F3400D5C082 /* Controller */ = {
 			isa = PBXGroup;
 			children = (
+				BF7007311D789F00007B1DF2 /* MusicVideoDetailVC.swift */,
 				BFC2D6541D7755CE00E8F62E /* MusicVideoTVC.swift */,
 				BFC2D6561D7764A500E8F62E /* MusicVideoTableViewCell.swift */,
 				BFF4955F1CEE2BA70096E8DB /* ViewController.swift */,
@@ -330,6 +333,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				BFA1621D1CEE339500D5C082 /* APIManager.swift in Sources */,
+				BF7007321D789F00007B1DF2 /* MusicVideoDetailVC.swift in Sources */,
 				BFF495601CEE2BA70096E8DB /* ViewController.swift in Sources */,
 				BFA162221CEE464C00D5C082 /* MusicVideo.swift in Sources */,
 				BFC2D6571D7764A500E8F62E /* MusicVideoTableViewCell.swift in Sources */,
