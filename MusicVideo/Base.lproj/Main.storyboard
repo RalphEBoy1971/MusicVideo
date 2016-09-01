@@ -86,10 +86,10 @@
             </objects>
             <point key="canvasLocation" x="1524" y="171"/>
         </scene>
-        <!--Table View Controller-->
+        <!--SettingsTVC-->
         <scene sceneID="fok-PE-jS9">
             <objects>
-                <tableViewController id="i2V-81-196" sceneMemberID="viewController">
+                <tableViewController id="i2V-81-196" customClass="SettingsTVC" customModule="MusicVideo" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="static" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" id="Cmv-ur-dSm">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -154,6 +154,9 @@
                                             <subviews>
                                                 <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="6w9-J4-qHt">
                                                     <rect key="frame" x="535" y="26" width="51" height="31"/>
+                                                    <connections>
+                                                        <action selector="touchIDSec:" destination="i2V-81-196" eventType="valueChanged" id="RS8-Yj-tfa"/>
+                                                    </connections>
                                                 </switch>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Security" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="QNZ-xl-KmD">
                                                     <rect key="frame" x="8" y="31" width="101" height="21"/>
@@ -251,10 +254,19 @@
                             <outlet property="delegate" destination="i2V-81-196" id="QRX-Us-qLz"/>
                         </connections>
                     </tableView>
+                    <connections>
+                        <outlet property="APICnt" destination="qBJ-TH-6FT" id="DGO-Qb-wAP"/>
+                        <outlet property="aboutDisplay" destination="wP9-75-rxE" id="zCT-il-sqr"/>
+                        <outlet property="bestImageDisplay" destination="IVN-Qz-VZK" id="ozt-H8-3ox"/>
+                        <outlet property="feedbackDisplay" destination="vOV-Wd-fJb" id="1As-3I-cGl"/>
+                        <outlet property="securityDisplay" destination="QNZ-xl-KmD" id="Efe-NV-YVI"/>
+                        <outlet property="sliderCnt" destination="sAx-R1-byI" id="p8U-LQ-xsF"/>
+                        <outlet property="touchID" destination="6w9-J4-qHt" id="kts-ii-dsJ"/>
+                    </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="hb8-He-Mo2" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1524" y="872"/>
+            <point key="canvasLocation" x="1524" y="895"/>
         </scene>
         <!--Music Video DetailVC-->
         <scene sceneID="lLS-Ya-pC2">
