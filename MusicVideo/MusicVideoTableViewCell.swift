@@ -22,13 +22,16 @@ class MusicVideoTableViewCell: UITableViewCell {
     
     func updateCell() {
         
+        musicTitle.font = UIFont.preferredFontForTextStyle(UIFontTextStyleSubheadline)
+        rank.font = UIFont.preferredFontForTextStyle(UIFontTextStyleSubheadline)
+        
         musicTitle.text = video?.vName
-        rank.text = ("\(video!.vRank)")
+        rank.text = ("#\(video!.vRank)")
         
         //musicImage.image = UIImage(named: "itunes")
         
         if video!.vImageData != nil {
-            print("\(video!.vRank) - Get data from array ...")
+            print("#\(video!.vRank) - Get data from array ...")
             musicImage.image = UIImage(data: video!.vImageData!)
         }
         else
@@ -51,7 +54,7 @@ class MusicVideoTableViewCell: UITableViewCell {
             if data != nil {
                 video.vImageData = data
                 image = UIImage(data: data!)
-                print("\(video.vRank) - Get data from iTunes ...")
+                print("#\(video.vRank) - Get data from iTunes ...")
             }
             
             // move back to Main Queue
