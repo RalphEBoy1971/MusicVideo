@@ -144,7 +144,7 @@ class Videos {
         }
         
         // Video Genre
-        if let genre = data["link"] as? JSONDictionary,
+        if let genre = data["category"] as? JSONDictionary,
             genre2 = genre["attributes"] as? JSONDictionary,
             vGenre = genre2["label"] as? String {
                 self._vGenre = vGenre
