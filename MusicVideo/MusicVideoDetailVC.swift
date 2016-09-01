@@ -32,7 +32,7 @@ class MusicVideoDetailVC: UIViewController {
         if videos.vImageData != nil {
             videoImage.image = UIImage(data: videos.vImageData!)
         } else {
-            videoImage.image = UIImage(named: "itunes")
+            videoImage.image = UIImage(named: "imageNotAvailable")
         }
     }
 }

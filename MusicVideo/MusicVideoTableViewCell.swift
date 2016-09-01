@@ -28,7 +28,7 @@ class MusicVideoTableViewCell: UITableViewCell {
         musicTitle.text = video?.vName
         rank.text = ("#\(video!.vRank)")
         
-        //musicImage.image = UIImage(named: "itunes")
+        //musicImage.image = UIImage(named: "imageNotAvailable")
         
         if video!.vImageData != nil {
             print("#\(video!.vRank) - Get data from array ...")
