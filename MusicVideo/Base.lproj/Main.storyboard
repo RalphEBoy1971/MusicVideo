@@ -422,6 +422,9 @@
                     <toolbarItems>
                         <barButtonItem systemItem="play" id="VuB-SI-O37">
                             <color key="tintColor" red="1" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                            <connections>
+                                <action selector="playVideo:" destination="Kzf-6O-Bgp" id="hla-Qh-2Ej"/>
+                            </connections>
                         </barButtonItem>
                         <barButtonItem style="plain" systemItem="flexibleSpace" id="chS-63-WaO"/>
                         <barButtonItem systemItem="action" id="vaM-i3-B9D">
