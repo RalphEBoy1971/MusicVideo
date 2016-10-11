@@ -25,16 +25,16 @@ class SettingsTVC: UITableViewController, MFMailComposeViewControllerDelegate {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        NSNotificationCenter.defaultCenter().addObserver(self, selector: "preferredFontChange", name: UIContentSizeCategoryDidChangeNotification, object: nil)
+        NotificationCenter.default.addObserver(self, selector: #selector(SettingsTVC.preferredFontChange), name: NSNotification.Name.UIContentSizeCategoryDidChange, object: nil)
         
         tableView.alwaysBounceVertical = false
         
         title = "Settings"
 
-        touchID.on = NSUserDefaults.standardUserDefaults().boolForKey("SecSetting")
+        touchID.isOn = UserDefaults.standard.bool(forKey: "SecSetting")
         
-        if (NSUserDefaults.standardUserDefaults().objectForKey("APICNT") != nil) {
-            let theValue = NSUserDefaults.standardUserDefaults().objectForKey("APICNT") as! Int
+        if (UserDefaults.standard.object(forKey: "APICNT") != nil) {
+            let theValue = UserDefaults.standard.object(forKey: "APICNT") as! Int
             APICnt.text = "\(theValue)"
             sliderCnt.value = Float(theValue)
         } else {
@@ -44,49 +44,49 @@ class SettingsTVC: UITableViewController, MFMailComposeViewControllerDelegate {
 
     }
     
-    @IBAction func valueChanged(sender: AnyObject) {
+    @IBAction func valueChanged(_ sender: AnyObject) {
         
-        let defaults = NSUserDefaults.standardUserDefaults()
-        defaults.setObject(Int(sliderCnt.value), forKey: "APICNT")
+        let defaults = UserDefaults.standard
+        defaults.set(Int(sliderCnt.value), forKey: "APICNT")
         APICnt.text = ("\(Int(sliderCnt.value))")
         
     }
-    @IBAction func touchIDSec(sender: UISwitch) {
+    @IBAction func touchIDSec(_ sender: UISwitch) {
         
-        let defaults = NSUserDefaults.standardUserDefaults()
+        let defaults = UserDefaults.standard
         
-        if touchID.on {
-            defaults.setBool(touchID.on, forKey: "SecSetting")
+        if touchID.isOn {
+            defaults.set(touchID.isOn, forKey: "SecSetting")
         } else {
-            defaults.setBool(false, forKey: "SecSetting")
+            defaults.set(false, forKey: "SecSetting")
         }
     }
     
     func preferredFontChange() {
         
-        aboutDisplay.font = UIFont.preferredFontForTextStyle(UIFontTextStyleSubheadline)
-        feedbackDisplay.font = UIFont.preferredFontForTextStyle(UIFontTextStyleSubheadline)
-        securityDisplay.font = UIFont.preferredFontForTextStyle(UIFontTextStyleSubheadline)
-        bestImageDisplay.font = UIFont.preferredFontForTextStyle(UIFontTextStyleSubheadline)
-        APICnt.font = UIFont.preferredFontForTextStyle(UIFontTextStyleSubheadline)
-        numMV.font = UIFont.preferredFontForTextStyle(UIFontTextStyleSubheadline)
-        dragSlider.font = UIFont.preferredFontForTextStyle(UIFontTextStyleSubheadline)
+        aboutDisplay.font = UIFont.preferredFont(forTextStyle: UIFontTextStyle.subheadline)
+        feedbackDisplay.font = UIFont.preferredFont(forTextStyle: UIFontTextStyle.subheadline)
+        securityDisplay.font = UIFont.preferredFont(forTextStyle: UIFontTextStyle.subheadline)
+        bestImageDisplay.font = UIFont.preferredFont(forTextStyle: UIFontTextStyle.subheadline)
+        APICnt.font = UIFont.preferredFont(forTextStyle: UIFontTextStyle.subheadline)
+        numMV.font = UIFont.preferredFont(forTextStyle: UIFontTextStyle.subheadline)
+        dragSlider.font = UIFont.preferredFont(forTextStyle: UIFontTextStyle.subheadline)
     }
     
-    override func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
+    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         
-        if indexPath.section == 0 && indexPath.row == 1 {
+        if (indexPath as NSIndexPath).section == 0 && (indexPath as NSIndexPath).row == 1 {
             
             let mailComposeViewController = configureMail()
             
             if MFMailComposeViewController.canSendMail() {
-                self.presentViewController(mailComposeViewController, animated: true, completion: nil)
+                self.present(mailComposeViewController, animated: true, completion: nil)
             } else {
                 
                 // No email account Setup on Phone
                 mailAlert()
             }
-            tableView.deselectRowAtIndexPath(indexPath, animated: true)
+            tableView.deselectRow(at: indexPath, animated: true)
         }
     }
     
@@ -103,34 +103,34 @@ class SettingsTVC: UITableViewController, MFMailComposeViewControllerDelegate {
     
     func mailAlert() {
         
-        let alertController: UIAlertController = UIAlertController(title: "Alert", message: "No e-Mail Account setup for Phone", preferredStyle: .Alert)
-        let okAction = UIAlertAction(title: "Ok", style: .Default) { action -> Void in
+        let alertController: UIAlertController = UIAlertController(title: "Alert", message: "No e-Mail Account setup for Phone", preferredStyle: .alert)
+        let okAction = UIAlertAction(title: "Ok", style: .default) { action -> Void in
             // do something if you want
         }
         
         alertController.addAction(okAction)
         
-        self.presentViewController(alertController, animated: true, completion: nil)
+        self.present(alertController, animated: true, completion: nil)
     }
     
-    func mailComposeController(controller: MFMailComposeViewController, didFinishWithResult result: MFMailComposeResult, error: NSError?) {
+    func mailComposeController(_ controller: MFMailComposeViewController, didFinishWith result: MFMailComposeResult, error: Error?) {
         
         switch result.rawValue {
-        case MFMailComposeResultCancelled.rawValue:
+        case MFMailComposeResult.cancelled.rawValue:
             print("Mail Cancelled")
-        case MFMailComposeResultSaved.rawValue:
+        case MFMailComposeResult.saved.rawValue:
             print("Mail Saved")
-        case MFMailComposeResultSent.rawValue:
+        case MFMailComposeResult.sent.rawValue:
             print("Mail Sent")
-        case MFMailComposeResultFailed.rawValue:
+        case MFMailComposeResult.failed.rawValue:
             print("Mail Failed")
         default:
             print("Unknown Issue")
         }
-        self.dismissViewControllerAnimated(true, completion: nil)
+        self.dismiss(animated: true, completion: nil)
     }
     
     deinit {
-        NSNotificationCenter.defaultCenter().removeObserver(self, name: UIContentSizeCategoryDidChangeNotification, object: nil)
+        NotificationCenter.default.removeObserver(self, name: NSNotification.Name.UIContentSizeCategoryDidChange, object: nil)
     }
 }

@@ -21,7 +21,7 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
         tableView.dataSource = self
         tableView.delegate = self
         
-        NSNotificationCenter.defaultCenter().addObserver(self, selector: "reachabilityStatusChanged", name: "ReachStatusChanged", object: nil)
+        NotificationCenter.default.addObserver(self, selector: #selector(ViewController.reachabilityStatusChanged), name: NSNotification.Name(rawValue: "ReachStatusChanged"), object: nil)
         
         reachabilityStatusChanged()
         
@@ -30,7 +30,7 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
         api.loadData("https://itunes.apple.com/us/rss/topmusicvideos/limit=50/json", completion: didLoadData)
     }
     
-    func didLoadData(videos:[Videos]) {
+    func didLoadData(_ videos:[Videos]) {
         
         print(reachabilityStatus)
         
@@ -40,7 +40,7 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
             print("name = \(item.vName)")
         }
         
-        for (index, item) in videos.enumerate() {
+        for (index, item) in videos.enumerated() {
             print("\(index) name = \(item.vName)")
         }
         
@@ -61,11 +61,11 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
     func reachabilityStatusChanged() {
         
         switch reachabilityStatus {
-        case NOACCESS : view.backgroundColor = UIColor.redColor()
+        case NOACCESS : view.backgroundColor = UIColor.red
         displayLabel.text = "No Internet"
-        case WIFI : view.backgroundColor = UIColor.greenColor()
+        case WIFI : view.backgroundColor = UIColor.green
         displayLabel.text = "Reachable with WIFI"
-        case WWAN : view.backgroundColor = UIColor.yellowColor()
+        case WWAN : view.backgroundColor = UIColor.yellow
         displayLabel.text = "Reachable with Cellular"
         default:return
         }
@@ -73,24 +73,24 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
     }
     
     deinit {
-        NSNotificationCenter.defaultCenter().removeObserver(self, name: "ReachStatusChanged", object: nil)
+        NotificationCenter.default.removeObserver(self, name: NSNotification.Name(rawValue: "ReachStatusChanged"), object: nil)
     }
     
-    func numberOfSectionsInTableView(tableView: UITableView) -> Int {
+    func numberOfSections(in tableView: UITableView) -> Int {
         return 1
     }
     
-    func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return videos.count
     }
     
-    func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
-        let cell = tableView.dequeueReusableCellWithIdentifier("cell", forIndexPath: indexPath)
+        let cell = tableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath)
         
-        let video = videos[indexPath.row]
+        let video = videos[(indexPath as NSIndexPath).row]
         
-        cell.textLabel?.text = ("\(indexPath.row + 1)")
+        cell.textLabel?.text = ("\((indexPath as NSIndexPath).row + 1)")
         
         cell.detailTextLabel?.text = video.vName
         

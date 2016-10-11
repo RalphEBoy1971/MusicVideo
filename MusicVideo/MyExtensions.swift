@@ -9,8 +9,8 @@
 import UIKit
 
 extension MusicVideoTVC: UISearchResultsUpdating {
-    func updateSearchResultsForSearchController(searchController: UISearchController) {
-        searchController.searchBar.text!.lowercaseString
+    func updateSearchResults(for searchController: UISearchController) {
+        searchController.searchBar.text!.lowercased()
         filterSearch(searchController.searchBar.text!)
     }
 }
