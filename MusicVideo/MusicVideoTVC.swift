@@ -8,7 +8,7 @@
 
 import UIKit
 
-class MusicVideoTVC: UITableViewController, UISearchResultsUpdating {
+class MusicVideoTVC: UITableViewController {
 
     var videos = [Videos]()
     
@@ -57,7 +57,7 @@ class MusicVideoTVC: UITableViewController, UISearchResultsUpdating {
         
         resultSearchController.dimsBackgroundDuringPresentation = false
         
-        resultSearchController.searchBar.placeholder = "Search for Artist"
+        resultSearchController.searchBar.placeholder = "Search for Artist, Name, or Rank"
         
         resultSearchController.searchBar.searchBarStyle = UISearchBarStyle.Prominent
         
@@ -255,17 +255,25 @@ class MusicVideoTVC: UITableViewController, UISearchResultsUpdating {
         }
     }
  
-    func updateSearchResultsForSearchController(searchController: UISearchController) {
-        searchController.searchBar.text!.lowercaseString
-        filterSearch(searchController.searchBar.text!)
-    }
+//    func updateSearchResultsForSearchController(searchController: UISearchController) {
+//        searchController.searchBar.text!.lowercaseString
+//        filterSearch(searchController.searchBar.text!)
+//    }
     
     func filterSearch(searchText: String) {
         filterSearch = videos.filter { Videos in
-            return Videos.vArtist.lowercaseString.containsString(searchText.lowercaseString)
+            return Videos.vArtist.lowercaseString.containsString(searchText.lowercaseString) || Videos.vName.lowercaseString.containsString(searchText.lowercaseString) || "\(Videos.vRank)".lowercaseString.containsString(searchText.lowercaseString)
         }
         tableView.reloadData()
     }
-    
-
 }
+
+//extension MusicVideoTVC: UISearchResultsUpdating {
+//    func updateSearchResultsForSearchController(searchController: UISearchController) {
+//        searchController.searchBar.text!.lowercaseString
+//        filterSearch(searchController.searchBar.text!)
+//    }
+//}
+
+
+

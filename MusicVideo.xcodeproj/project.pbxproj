@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		BF3FC8F41D80634600C6693E /* MyExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF3FC8F31D80634600C6693E /* MyExtensions.swift */; };
 		BF4A870D1D5E19D400234E32 /* Reachability.m in Sources */ = {isa = PBXBuildFile; fileRef = BF4A870C1D5E19D400234E32 /* Reachability.m */; };
 		BF7007321D789F00007B1DF2 /* MusicVideoDetailVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF7007311D789F00007B1DF2 /* MusicVideoDetailVC.swift */; };
 		BF7007361D78BC14007B1DF2 /* SettingsTVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF7007351D78BC14007B1DF2 /* SettingsTVC.swift */; };
@@ -43,6 +44,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		BF3FC8F31D80634600C6693E /* MyExtensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MyExtensions.swift; sourceTree = "<group>"; };
 		BF4A870A1D5E19D400234E32 /* MusicVideo-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "MusicVideo-Bridging-Header.h"; sourceTree = "<group>"; };
 		BF4A870B1D5E19D400234E32 /* Reachability.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Reachability.h; sourceTree = "<group>"; };
 		BF4A870C1D5E19D400234E32 /* Reachability.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Reachability.m; sourceTree = "<group>"; };
@@ -120,6 +122,7 @@
 				BF7007351D78BC14007B1DF2 /* SettingsTVC.swift */,
 				BF7007311D789F00007B1DF2 /* MusicVideoDetailVC.swift */,
 				BFC2D6541D7755CE00E8F62E /* MusicVideoTVC.swift */,
+				BF3FC8F31D80634600C6693E /* MyExtensions.swift */,
 				BFC2D6561D7764A500E8F62E /* MusicVideoTableViewCell.swift */,
 				BFF4955F1CEE2BA70096E8DB /* ViewController.swift */,
 			);
@@ -341,6 +344,7 @@
 				BFA1621D1CEE339500D5C082 /* APIManager.swift in Sources */,
 				BF7007321D789F00007B1DF2 /* MusicVideoDetailVC.swift in Sources */,
 				BFF495601CEE2BA70096E8DB /* ViewController.swift in Sources */,
+				BF3FC8F41D80634600C6693E /* MyExtensions.swift in Sources */,
 				BFA162221CEE464C00D5C082 /* MusicVideo.swift in Sources */,
 				BFC2D6571D7764A500E8F62E /* MusicVideoTableViewCell.swift in Sources */,
 				BFF4955E1CEE2BA70096E8DB /* AppDelegate.swift in Sources */,
