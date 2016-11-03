@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		BF0FCB2D1DCBB82D004766F2 /* JsonDataExtrator.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF0FCB2C1DCBB82D004766F2 /* JsonDataExtrator.swift */; };
 		BF3FC8F41D80634600C6693E /* MyExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF3FC8F31D80634600C6693E /* MyExtensions.swift */; };
 		BF4A870D1D5E19D400234E32 /* Reachability.m in Sources */ = {isa = PBXBuildFile; fileRef = BF4A870C1D5E19D400234E32 /* Reachability.m */; };
 		BF7007321D789F00007B1DF2 /* MusicVideoDetailVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF7007311D789F00007B1DF2 /* MusicVideoDetailVC.swift */; };
@@ -18,7 +19,6 @@
 		BFC2D6551D7755CE00E8F62E /* MusicVideoTVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFC2D6541D7755CE00E8F62E /* MusicVideoTVC.swift */; };
 		BFC2D6571D7764A500E8F62E /* MusicVideoTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFC2D6561D7764A500E8F62E /* MusicVideoTableViewCell.swift */; };
 		BFF4955E1CEE2BA70096E8DB /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFF4955D1CEE2BA70096E8DB /* AppDelegate.swift */; };
-		BFF495601CEE2BA70096E8DB /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFF4955F1CEE2BA70096E8DB /* ViewController.swift */; };
 		BFF495631CEE2BA70096E8DB /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BFF495611CEE2BA70096E8DB /* Main.storyboard */; };
 		BFF495651CEE2BA70096E8DB /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = BFF495641CEE2BA70096E8DB /* Assets.xcassets */; };
 		BFF495681CEE2BA70096E8DB /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BFF495661CEE2BA70096E8DB /* LaunchScreen.storyboard */; };
@@ -44,6 +44,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		BF0FCB2C1DCBB82D004766F2 /* JsonDataExtrator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JsonDataExtrator.swift; sourceTree = "<group>"; };
 		BF3FC8F31D80634600C6693E /* MyExtensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MyExtensions.swift; sourceTree = "<group>"; };
 		BF4A870A1D5E19D400234E32 /* MusicVideo-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "MusicVideo-Bridging-Header.h"; sourceTree = "<group>"; };
 		BF4A870B1D5E19D400234E32 /* Reachability.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Reachability.h; sourceTree = "<group>"; };
@@ -58,7 +59,6 @@
 		BFC2D6561D7764A500E8F62E /* MusicVideoTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MusicVideoTableViewCell.swift; sourceTree = "<group>"; };
 		BFF4955A1CEE2BA70096E8DB /* MusicVideo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MusicVideo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		BFF4955D1CEE2BA70096E8DB /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		BFF4955F1CEE2BA70096E8DB /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		BFF495621CEE2BA70096E8DB /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		BFF495641CEE2BA70096E8DB /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		BFF495671CEE2BA70096E8DB /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -111,6 +111,7 @@
 			children = (
 				BFA162211CEE464C00D5C082 /* MusicVideo.swift */,
 				BFA1621C1CEE339500D5C082 /* APIManager.swift */,
+				BF0FCB2C1DCBB82D004766F2 /* JsonDataExtrator.swift */,
 			);
 			name = Model;
 			sourceTree = "<group>";
@@ -124,7 +125,6 @@
 				BFC2D6541D7755CE00E8F62E /* MusicVideoTVC.swift */,
 				BF3FC8F31D80634600C6693E /* MyExtensions.swift */,
 				BFC2D6561D7764A500E8F62E /* MusicVideoTableViewCell.swift */,
-				BFF4955F1CEE2BA70096E8DB /* ViewController.swift */,
 			);
 			name = Controller;
 			sourceTree = "<group>";
@@ -270,7 +270,7 @@
 			isa = PBXProject;
 			attributes = {
 				LastSwiftUpdateCheck = 0730;
-				LastUpgradeCheck = 0730;
+				LastUpgradeCheck = 0810;
 				ORGANIZATIONNAME = "Ralph Halbrook";
 				TargetAttributes = {
 					BFF495591CEE2BA70096E8DB = {
@@ -346,11 +346,11 @@
 			files = (
 				BFA1621D1CEE339500D5C082 /* APIManager.swift in Sources */,
 				BF7007321D789F00007B1DF2 /* MusicVideoDetailVC.swift in Sources */,
-				BFF495601CEE2BA70096E8DB /* ViewController.swift in Sources */,
 				BF3FC8F41D80634600C6693E /* MyExtensions.swift in Sources */,
 				BFA162221CEE464C00D5C082 /* MusicVideo.swift in Sources */,
 				BFC2D6571D7764A500E8F62E /* MusicVideoTableViewCell.swift in Sources */,
 				BFF4955E1CEE2BA70096E8DB /* AppDelegate.swift in Sources */,
+				BF0FCB2D1DCBB82D004766F2 /* JsonDataExtrator.swift in Sources */,
 				BF4A870D1D5E19D400234E32 /* Reachability.m in Sources */,
 				BFA162201CEE44EC00D5C082 /* Constants.swift in Sources */,
 				BF7007361D78BC14007B1DF2 /* SettingsTVC.swift in Sources */,
@@ -424,8 +424,10 @@
 				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
 				CLANG_WARN_EMPTY_BODY = YES;
 				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
@@ -470,8 +472,10 @@
 				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
 				CLANG_WARN_EMPTY_BODY = YES;
 				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
@@ -490,6 +494,7 @@
 				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				SDKROOT = iphoneos;
+				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
 				TARGETED_DEVICE_FAMILY = "1,2";
 				VALIDATE_PRODUCT = YES;
 			};

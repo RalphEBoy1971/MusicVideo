@@ -10,9 +10,9 @@ import UIKit
 
 class MusicVideoTVC: UITableViewController {
 
-    var videos = [Videos]()
+    var videos = [Video]()
     
-    var filterSearch = [Videos]()
+    var filterSearch = [Video]()
     
     let resultSearchController = UISearchController(searchResultsController: nil)
     
@@ -32,7 +32,7 @@ class MusicVideoTVC: UITableViewController {
         print("The preferred Font has changed ...")
     }
     
-    func didLoadData(_ videos:[Videos]) {
+    func didLoadData(_ videos:[Video]) {
         
         print(reachabilityStatus)
         
@@ -239,7 +239,7 @@ class MusicVideoTVC: UITableViewController {
         {
             if let indexpath = tableView.indexPathForSelectedRow {
                 
-                let video: Videos
+                let video: Video
                 
                 if resultSearchController.isActive {
                     video = filterSearch[(indexpath as NSIndexPath).row]

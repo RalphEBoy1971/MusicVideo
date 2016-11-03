@@ -9,9 +9,9 @@
 import Foundation
 
 class APIManager {
-
     
-    func loadData(_ urlString:String, completion: @escaping ([Videos]) -> Void) {
+    
+    func loadData(_ urlString:String, completion: @escaping ([Video]) -> Void) {
         
         let config = URLSessionConfiguration.ephemeral
         let session = URLSession(configuration: config)
@@ -19,56 +19,44 @@ class APIManager {
         //let session = NSURLSession.sharedSession()
         let url = URL(string: urlString)!
         
-        let task = session.dataTask(with: url, completionHandler: {
+        let task = session.dataTask(with: url) {
             (data, response, error) -> Void in
             
             if error != nil {
-
+                
                 print(error!.localizedDescription)
-
+                
             } else {
                 
-                //Added for JSONSerialization
-                //print(data)
-                do {
-                    /* .AllowFragments - top level objects is not Array or Dictionary.
-                    Any type of string or value
-                    NSJSONSerialization requires the Do / Try / Catch
-                    Converts the NSDATA into a JSON Object and cast it to a Dictionary */
-                    
-                    if let json = try JSONSerialization.jsonObject(with: data!, options: .allowFragments) as? JSONDictionary, let feed = json["feed"] as? JSONDictionary,
-                        let entries = feed["entry"] as? JSONArray {
-                        
-                        var videos = [Videos]()
-                        for (index, entry) in entries.enumerated() {
-                            let entry = Videos(data: entry as! JSONDictionary)
-                            entry.vRank = index + 1
-                            videos.append(entry)
-                        }
-                        
-                        let i = videos.count
-                        print("ITunesApiManager - total count --> \(i)")
-                        print(" ")
-                        
-                        let priority = DispatchQueue.GlobalQueuePriority.default
-                        DispatchQueue.global(priority: priority).async {
-                            DispatchQueue.main.async {
-                                completion(videos)
-                            }
-                        }
-                        
-                        
+                let videos = self.parseJson(data: data as NSData?)
+                
+                let priority = DispatchQueue.GlobalQueuePriority.default
+                DispatchQueue.global(priority: priority).async {
+                    DispatchQueue.main.async {
+                        completion(videos)
                     }
-                    
-                    
-                } catch {
-
-                    print("error in NSJSONSerialization")
-
                 }
             }
-            }) 
-        task.resume()
+        }
+            task.resume()
+    }
+    
+    func  parseJson(data: NSData?) -> [Video] {
+        
+        do {
+            
+            if let json = try JSONSerialization.jsonObject(with: data! as Data, options: JSONSerialization.ReadingOptions.allowFragments) as AnyObject? {
+                
+                return JsonDataExtractor.extractVideoDataFromJson(videoDataObject: json)
+                
+            }
+        }
+            
+        catch {
+            print("Failed to parse data: \(error)")
         }
         
+        return [Video]()
     }
+    
+}
